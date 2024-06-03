@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  notification_service:
+    build: .
+    ports:
+      - "5003:5003"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

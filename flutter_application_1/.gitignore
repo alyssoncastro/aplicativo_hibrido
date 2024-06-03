@@ -1,0 +1,97 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+
+# Flutter/Dart related
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# IntelliJ related
+.idea/
+*.iml
+
+# VS Code related
+.vscode/
+
+# MacOS related
+.DS_Store
+
+# Windows related
+Thumbs.db
+
+# Python related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# SQLite database file
+app/src/instance/project.db
+
+# Docker related
+**/node_modules/
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Log files
+*.log
+
+# Ignore entrypoint.sh if it's generated or not relevant to be committed
+entrypoint.sh
+
+# Ignore any other files that you don't want to include in the repository

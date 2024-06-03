@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  log_service:
+    build: .
+    ports:
+      - "5001:5001"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

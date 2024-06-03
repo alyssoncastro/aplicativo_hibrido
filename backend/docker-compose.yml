@@ -1,0 +1,55 @@
+version: '3'
+services:
+  user_service:
+    build: ./user_service
+    ports:
+      - "5000:5000"
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:password@postgres_service:5432/users_db
+    depends_on:
+      - postgres_service
+    networks:
+      - mynetwork
+
+  log_service:
+    build: ./log_service
+    ports:
+      - "5001:5001"
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:password@postgres_service:5432/logs_db
+    depends_on:
+      - postgres_service
+    networks:
+      - mynetwork
+
+  image_service:
+    build: ./image_service
+    ports:
+      - "5002:5002"
+    networks:
+      - mynetwork
+    depends_on:
+      - notification_service
+
+  notification_service:
+    build: ./notification_service
+    ports:
+      - "5003:5003"
+    networks:
+      - mynetwork
+
+  postgres_service:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
